@@ -1,0 +1,62 @@
+Count frequency of elements in a list
+
+Find duplicates + unique values
+
+Find first non-repeating element
+
+Merge two dictionaries (sum values if key exists)
+
+Sort dictionary by value (desc)
+
+DAy - 2
+DAY 2 – Strings & Log Processing
+
+This is actual data engineering work.
+
+Problems
+
+Word frequency in log file
+
+Extract IP, timestamp from log lines
+
+Find top 3 most frequent errors
+
+Remove special characters
+
+Check anagrams (case insensitive)
+
+---------------------------------------------
+
+DAY 3 – File Handling & Large Data
+
+Most people fail here.
+
+Problems
+
+Read 10GB file line by line
+
+Filter rows and write output
+
+Count lines without loading full file
+
+Chunk processing
+
+CSV read without Pandas
+
+
+-----------------------------------------
+DAY 6 – Real ETL Logic
+
+This separates juniors from mid-level DEs.
+
+Problems
+
+Incremental load using timestamp
+
+Dedup records using business key
+
+Join two datasets without SQL
+
+Data validation before load
+
+Simulate pipeline failure & recovery
