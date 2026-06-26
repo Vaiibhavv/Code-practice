@@ -1,0 +1,67 @@
+cells:
+  - kind: 2
+    value: "## if spark.catalog.tabelExists(\"table0\"):\r
+
+      \     pass\r
+
+      \   else:\r
+
+      \      spark.sql(\"create table  ..\")\r
+
+      \r
+
+      \    ## suppose you have a df \r
+
+      \    df=spark.sql(\"select * from soure table\") # here data is present,
+      \r
+
+      \    ## suppose now you have append any data source table okay, the old
+      data is there with the id, now you have inserted the  data with same id
+      but with updated data \r
+
+      \    \r
+
+      \    ## first dedupb the data using window function for id (okay)\r
+
+      \r
+
+      \    now convert the source df into temptable \r
+
+      \    spark.createRepaceTempView(\"scr\")\r
+
+      \r
+
+      \    ## now update the latest previous record and insert the latest data,
+      first just update previos dta \r
+
+      \    merge into target t \r
+
+      \    using src s \r
+
+      \    on t.id=s.id and t.is_active='A'\r
+
+      \    when matched and t.name <> s.name or t.last_updated <> s.last_updated
+      or t.name <> s.name \r
+
+      \    then update set t.is_active=\"N\" , end_date=current_timestam()\r
+
+      \r
+
+      \    ## this will only update the previous value \r
+
+      \    now update the new record, \r
+
+      \    \r
+
+      \    merge into t \r
+
+      \    using scr c \r
+
+      \    on t.id =s.id and is.active='A'\r
+
+      \r
+
+      \    when not matched then insert *\r
+
+      \    "
+    languageId: oracle-sql
