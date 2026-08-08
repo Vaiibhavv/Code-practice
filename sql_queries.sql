@@ -1,6 +1,12 @@
+-- Active: 1780514413646@@localhost@5432@postgres@public
+-- Active: 1780514413646@@localhost@5432@postgres
 
 -- approch <<<<<
 -- quetionn - ***********
+
+SELECT employee_id,first_name,last_name, count(email) AS EMAIL_COUNT FROM employee
+GROUP BY employee_id
+having count(*)=1
 
 --q1-Find department-wise employee count
 
@@ -46,3 +52,5 @@ select employee_id,employee_name,salary from
 where salary>avg_salary;
 
 -- Q4- 
+
+select * from employee;
